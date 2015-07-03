@@ -37,25 +37,25 @@ EXIT /B 0
 	ECHO *** DOWNLOADING DEFAULT PACKAGES
 	%SETUP_LAUNCHER% --quiet-mode --no-desktop --download --no-verify --disable-buggy-antivirus ^
 	-s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%" ^
-	--remove-packages vim-minimal
+	--remove-packages %UNWANT_PACKAGES%
 	ECHO.
 	ECHO.
 	ECHO *** DOWNLOADING CUSTOM PACKAGES
 	%SETUP_LAUNCHER% --quiet-mode --no-desktop --download --no-verify --disable-buggy-antivirus ^
 	-s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%" ^
-	--remove-packages vim-minimal -P %PACKAGES%
+	--remove-packages %UNWANT_PACKAGES% -P %PACKAGES%
 	GOTO END_CASE
 :CASE_install
 	ECHO *** INSTALLING DEFAULT PACKAGES
 	%SETUP_LAUNCHER% --quiet-mode --no-desktop --local-install --no-verify --disable-buggy-antivirus ^
 	-s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%" ^
-	--remove-packages vim-minimal
+	--remove-packages %UNWANT_PACKAGES%
 	ECHO.
 	ECHO.
 	ECHO *** INSTALLING CUSTOM PACKAGES
 	%SETUP_LAUNCHER% --quiet-mode --no-desktop --local-install --no-verify --disable-buggy-antivirus ^
 	-s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%" ^
-	--remove-packages vim-minimal -P %PACKAGES%
+	--remove-packages %UNWANT_PACKAGES% -P %PACKAGES%
 	
 	ECHO apt-cyg installing.
 	set PATH=%ROOTDIR%/bin;%PATH%
@@ -64,8 +64,8 @@ EXIT /B 0
 	
 	GOTO END_CASE
 :DEFAULT_CASE
-  ECHO Unknown method "%METHOD%"
-  GOTO END_CASE
+	ECHO Unknown method "%METHOD%"
+	GOTO END_CASE
 :END_CASE
 	VER > NUL # reset ERRORLEVEL
 	GOTO :EOF # return from CALL
