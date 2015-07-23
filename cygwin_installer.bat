@@ -10,7 +10,7 @@ CD %~dp0
 REM -- Configure our paths
 SET SITE=http://ftp.cse.yzu.edu.tw/pub/cygwin/
 SET LOCALDIR=%CD%
-SET ROOTDIR=C:/cygwin64
+SET ROOTDIR=C:\cygwin64
 SET SETUP_LAUNCHER=setup-x86_64.exe
 
 REM -- These are the packages we will install (in addition to the default packages)
@@ -35,33 +35,37 @@ EXIT /B 0
 
 :CASE_download
 	ECHO *** DOWNLOADING DEFAULT PACKAGES
-	%SETUP_LAUNCHER% --quiet-mode --no-desktop --download --no-verify --disable-buggy-antivirus ^
+	%SETUP_LAUNCHER% --quiet-mode --no-desktop --download --no-verify ^
 	-s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%" ^
 	--remove-packages %UNWANT_PACKAGES%
 	ECHO.
 	ECHO.
 	ECHO *** DOWNLOADING CUSTOM PACKAGES
-	%SETUP_LAUNCHER% --quiet-mode --no-desktop --download --no-verify --disable-buggy-antivirus ^
+	%SETUP_LAUNCHER% --quiet-mode --no-desktop --download --no-verify ^
 	-s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%" ^
 	--remove-packages %UNWANT_PACKAGES% -P %PACKAGES%
 	GOTO END_CASE
 :CASE_install
 	ECHO *** INSTALLING DEFAULT PACKAGES
-	%SETUP_LAUNCHER% --quiet-mode --no-desktop --local-install --no-verify --disable-buggy-antivirus ^
+	%SETUP_LAUNCHER% --quiet-mode --no-desktop --local-install --no-verify ^
 	-s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%" ^
 	--remove-packages %UNWANT_PACKAGES%
 	ECHO.
 	ECHO.
 	ECHO *** INSTALLING CUSTOM PACKAGES
-	%SETUP_LAUNCHER% --quiet-mode --no-desktop --local-install --no-verify --disable-buggy-antivirus ^
+	%SETUP_LAUNCHER% --quiet-mode --no-desktop --local-install --no-verify ^
 	-s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%" ^
 	--remove-packages %UNWANT_PACKAGES% -P %PACKAGES%
 	
 	ECHO apt-cyg installing.
-	set PATH=%ROOTDIR%/bin;%PATH%
-	%ROOTDIR%/bin/bash.exe -c "/usr/bin/lynx -source rawgit.com/transcode-open/apt-cyg/master/apt-cyg > apt-cyg"
-	%ROOTDIR%/bin/bash.exe -c "/usr/bin/install apt-cyg /bin"
+	set PATH=%ROOTDIR%\bin;%PATH%
+	%ROOTDIR%\bin\bash.exe -c "/usr/bin/lynx -source rawgit.com/transcode-open/apt-cyg/master/apt-cyg > apt-cyg"
+	%ROOTDIR%\bin\bash.exe -c "/usr/bin/install apt-cyg /bin"
+	%ROOTDIR%\bin\bash.exe -c "cp /usr/share/vim/vim74/vimrc_example.vim ~/.vimrc"
 	
+	assoc .sh=bashscript
+	ftype bashscript="%ROOTDIR%\bin\mintty.exe" /bin/bash -li "%%1" %%*
+
 	GOTO END_CASE
 :DEFAULT_CASE
 	ECHO Unknown method "%METHOD%"
