@@ -30,7 +30,7 @@ REM -- Change to the directory of the executing batch file
 CD %~dp0
 
 REM -- Configure our paths
-SET SITE=http://ftp.cse.yzu.edu.tw/pub/cygwin/
+SET SITE=ftp://ftp.twaren.net/Unix/sourceware.org/cygwin/
 SET LOCALDIR=%CD%
 SET ROOTDIR=C:\cygwin64
 SET SETUP_LAUNCHER=setup-x86_64.exe
