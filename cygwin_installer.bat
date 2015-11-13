@@ -30,7 +30,7 @@ REM -- Change to the directory of the executing batch file
 CD %~dp0
 
 REM -- Configure our paths
-SET SITE=ftp://ftp.twaren.net/Unix/sourceware.org/cygwin/
+SET SITE=http://ftp.ntu.edu.tw/pub/cygwin/
 SET LOCALDIR=%CD%
 SET ROOTDIR=C:\cygwin64
 SET SETUP_LAUNCHER=setup-x86_64.exe
@@ -81,7 +81,7 @@ EXIT /B 0
 	
 	ECHO apt-cyg installing.
 	set PATH=%ROOTDIR%\bin;%PATH%
-	%ROOTDIR%\bin\bash.exe -c "/usr/bin/lynx -source rawgit.com/transcode-open/apt-cyg/master/apt-cyg > apt-cyg"
+	%ROOTDIR%\bin\bash.exe -c "/usr/bin/lynx -source https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg > apt-cyg"
 	%ROOTDIR%\bin\bash.exe -c "/usr/bin/install apt-cyg /bin"
 	%ROOTDIR%\bin\bash.exe -c "cp /usr/share/vim/vim74/vimrc_example.vim ~/.vimrc"
 	
