@@ -136,6 +136,7 @@ EXIT /B 0
 	"%ROOTDIR%\bin\bash.exe" --login -c "/usr/bin/lynx -source https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg > apt-cyg"
 	"%ROOTDIR%\bin\bash.exe" --login -c "/usr/bin/install apt-cyg /bin"
 	"%ROOTDIR%\bin\bash.exe" --login -c "cp /usr/share/vim/vim74/vimrc_example.vim ~/.vimrc"
+	"%ROOTDIR%\bin\bash.exe" --login -c "sed -i 's/set mouse=a/set mouse-=a/' ~/.vimrc"
 	
 	assoc .sh=bashscript
 	ftype bashscript="%ROOTDIR%\bin\mintty.exe" /bin/bash -li "%%1" %%*
