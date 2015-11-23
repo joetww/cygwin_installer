@@ -1,6 +1,10 @@
 @ECHO OFF
+REM -- Author: Joetww@gmail.com (Taiwan/mandarin)
 REM -- Automates prepare Cygwin Download package...
-REM -- Source: https://github.com/rtwolf/auto-cygwin-install
+REM -- 參考來源: https://github.com/rtwolf/auto-cygwin-install
+REM -- 參考來源：https://raw.githubusercontent.com/weikinhuang/dotfiles/master/dotenv/other/setup-cygwin.cmd
+
+
 
 SETLOCAL
 
