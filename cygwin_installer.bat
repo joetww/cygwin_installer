@@ -137,6 +137,7 @@ EXIT /B 0
 	"%ROOTDIR%\bin\bash.exe" --login -c "/usr/bin/install apt-cyg /bin"
 	"%ROOTDIR%\bin\bash.exe" --login -c "cp /usr/share/vim/vim74/vimrc_example.vim ~/.vimrc"
 	"%ROOTDIR%\bin\bash.exe" --login -c "sed -i 's/set mouse=a/set mouse-=a/' ~/.vimrc"
+	"%ROOTDIR%\bin\bash.exe" --login -c "echo > /etc/motd"
 	
 	assoc .sh=bashscript
 	ftype bashscript="%ROOTDIR%\bin\mintty.exe" /bin/bash -li "%%1" %%*
