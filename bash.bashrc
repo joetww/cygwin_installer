@@ -59,3 +59,4 @@ export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 # The '&amp;' is a special pattern which suppresses duplicate entries.
 export HISTIGNORE=$'[ \t]*:&amp;:[fb]g:exit'
 export HISTIGNORE=$'[ \t]*:&amp;:[fb]g:exit:ls' # Ignore the ls command as well
+export HISTIGNORE=$'[ \t]*:&amp;:[fb]g:exit:ls:w:ls -la:history' 
