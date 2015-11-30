@@ -139,6 +139,7 @@ EXIT /B 0
 	"%ROOTDIR%\bin\bash.exe" --login -c "cp /usr/share/vim/vim74/vimrc_example.vim ~/.vimrc"
 	"%ROOTDIR%\bin\bash.exe" --login -c "sed -i 's/set mouse=a/set mouse-=a/' ~/.vimrc"
 	"%ROOTDIR%\bin\bash.exe" --login -c "echo > /etc/motd"
+	"%ROOTDIR%\bin\bash.exe" --login -c "git clone https://github.com/joetww/cygwin_installer.git && ( test -d cygwin_installer && cp cygwin_installer/minttyrc ~/.minttyrc && cp cygwin_installer/bash.bashrc /etc/bash.bashrc)"
 	
 	assoc .sh=bashscript
 	ftype bashscript="%ROOTDIR%\bin\mintty.exe" /bin/bash -li "%%1" %%*
