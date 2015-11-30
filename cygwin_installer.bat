@@ -90,6 +90,7 @@ REM -- These are the packages we will install (in addition to the default packag
 SET PACKAGES=mc,cygrunsrv,openssh,autossh,mintty,wget,ctags,diffutils,git,git-completion,git-svn,stgit,mercurial
 SET PACKAGES=%PACKAGES%,curl,mysql,nc,unzip,zip,w3m,vim,vim-common,tmux,php,ImageMagick,procps
 SET PACKAGES=%PACKAGES%,bash-completion,bc,ca-certificates,cygutils-extra,gnupg,inetutils,nc,nc6,ncurses
+SET PACKAGES=%PACKAGES%,dialog,findutils,util-linux
 
 REM -- These are necessary for apt-cyg install, do not change. Any duplicates will be ignored.
 SET PACKAGES=%PACKAGES%,wget,tar,gawk,bzip2,subversion
