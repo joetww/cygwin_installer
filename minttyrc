@@ -3,6 +3,7 @@ Term=xterm-256color
 Locale=C
 Charset=UTF-8
 Font=Consolas
+Columns=120
 Rows=48
 RightClickAction=paste
 FontIsBold=yes
