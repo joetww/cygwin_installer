@@ -60,3 +60,4 @@ export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 export HISTIGNORE=$'[ \t]*:&amp;:[fb]g:exit'
 export HISTIGNORE=$'[ \t]*:&amp;:[fb]g:exit:ls' # Ignore the ls command as well
 export HISTIGNORE=$'[ \t]*:&amp;:[fb]g:exit:ls:w:ls -la:history' 
+export CYGWIN=noglob
