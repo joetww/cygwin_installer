@@ -92,6 +92,7 @@ SET PACKAGES=%PACKAGES%,curl,mysql,nc,unzip,zip,w3m,vim,vim-common,tmux,php,Imag
 SET PACKAGES=%PACKAGES%,bash-completion,bc,ca-certificates,cygutils-extra,gnupg,inetutils,nc,nc6,ncurses
 SET PACKAGES=%PACKAGES%,dialog,findutils,util-linux
 SET PACKAGES=%PACKAGES%,make,pcre,libpcre-devel,zlib-devel,gnutls-devel,gcc-core
+SET PACKAGES=%PACKAGES%,postgresql-client,mysql
 
 REM -- These are necessary for apt-cyg install, do not change. Any duplicates will be ignored.
 SET PACKAGES=%PACKAGES%,wget,tar,gawk,bzip2,subversion
