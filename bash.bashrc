@@ -41,6 +41,7 @@ export LESS_TERMCAP_us=$'\E[00;32m'        # begin underline
 alias ifconfig="ipconfig"
 alias traceroute="tracert"
 alias path='echo -e ${PATH//:/\\n}'
+alias mc="mc -a"
 
 # Make bash append rather than overwrite the history on disk
 shopt -s histappend
@@ -61,3 +62,6 @@ export HISTIGNORE=$'[ \t]*:&amp;:[fb]g:exit'
 export HISTIGNORE=$'[ \t]*:&amp;:[fb]g:exit:ls' # Ignore the ls command as well
 export HISTIGNORE=$'[ \t]*:&amp;:[fb]g:exit:ls:w:ls -la:history' 
 export CYGWIN=noglob
+export VISUAL=vim
+export LC_ALL=en_US.UTF-8
+
