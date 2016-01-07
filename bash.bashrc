@@ -52,11 +52,14 @@ export LESS_TERMCAP_ZV=$(tput rsubm)
 export LESS_TERMCAP_ZO=$(tput ssupm)
 export LESS_TERMCAP_ZW=$(tput rsupm)
 
+export GREP_OPTIONS='--color=auto'
 
 alias ifconfig="ipconfig"
 alias traceroute="tracert"
 alias path='echo -e ${PATH//:/\\n}'
 alias mc="mc -a"
+alias grep="grep $GREP_OPTIONS"
+unset GREP_OPTIONS
 
 # Make bash append rather than overwrite the history on disk
 shopt -s histappend
@@ -79,5 +82,3 @@ export HISTIGNORE=$'[ \t]*:&amp;:[fb]g:exit:ls:w:ls -la:history'
 export CYGWIN=noglob
 export VISUAL=vim
 export LC_ALL=en_US.UTF-8
-
-export GREP_OPTIONS='--color=auto'
