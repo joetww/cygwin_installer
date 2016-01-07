@@ -29,13 +29,28 @@ PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '
 # Uncomment to use the terminal colours set in DIR_COLORS
 # eval "$(dircolors -b /etc/DIR_COLORS)"
 
-export LESS_TERMCAP_mb=$'\E[01;31m'        # begin blinking
-export LESS_TERMCAP_md=$'\E[00;34m'        # begin bold
-export LESS_TERMCAP_me=$'\E[0m'            # end mode
-export LESS_TERMCAP_se=$'\E[0m'            # end standout-mode
-export LESS_TERMCAP_so=$'\E[01;44;33m'     # begin standout-mode - info box
-export LESS_TERMCAP_ue=$'\E[0m'            # end underline
-export LESS_TERMCAP_us=$'\E[00;32m'        # begin underline
+# export LESS_TERMCAP_mb=$'\E[01;31m'        # begin blinking
+# export LESS_TERMCAP_md=$'\E[00;34m'        # begin bold
+# export LESS_TERMCAP_me=$'\E[0m'            # end mode
+# export LESS_TERMCAP_se=$'\E[0m'            # end standout-mode
+# export LESS_TERMCAP_so=$'\E[01;44;33m'     # begin standout-mode - info box
+# export LESS_TERMCAP_ue=$'\E[0m'            # end underline
+# export LESS_TERMCAP_us=$'\E[00;32m'        # begin underline
+
+# Less Colors for Man Pages
+export LESS_TERMCAP_mb=$'\E[0;103m' # begin blinking
+export LESS_TERMCAP_md=$'\E[0;93m' # begin bold
+export LESS_TERMCAP_me=$'\E[0m' # end mode
+export LESS_TERMCAP_se=$'\E[0m' # end standout-mode
+export LESS_TERMCAP_so=$(tput bold; tput setaf 8; tput setab 3) # begin standout-mode - info box
+export LESS_TERMCAP_ue=$'\E[0m' # end underline
+export LESS_TERMCAP_us=$'\E[04;32m' # begin underline
+export LESS_TERMCAP_mr=$(tput rev)
+export LESS_TERMCAP_mh=$(tput dim)
+export LESS_TERMCAP_ZN=$(tput ssubm)
+export LESS_TERMCAP_ZV=$(tput rsubm)
+export LESS_TERMCAP_ZO=$(tput ssupm)
+export LESS_TERMCAP_ZW=$(tput rsupm)
 
 
 alias ifconfig="ipconfig"
@@ -65,3 +80,4 @@ export CYGWIN=noglob
 export VISUAL=vim
 export LC_ALL=en_US.UTF-8
 
+export GREP_OPTIONS='--color=auto'
