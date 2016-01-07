@@ -82,3 +82,7 @@ export HISTIGNORE=$'[ \t]*:&amp;:[fb]g:exit:ls:w:ls -la:history'
 export CYGWIN=noglob
 export VISUAL=vim
 export LC_ALL=en_US.UTF-8
+
+# .bashrc will be overwrite everytime run cygwin_install.cmd,
+# so put your own setting in ~/.myown_bashrc
+[[ -f ~/.myown_bashrc ]] && . ~/.myown_bashrc
