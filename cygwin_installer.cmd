@@ -45,6 +45,9 @@ IF "%PROCESSOR_ARCHITECTURE%" == "x86" (
 	SET ROOTDIR=C:\cygwin64
 )
 
+SET CYGWIN_GLOBAL_OPT=-g -A --quiet-mode --no-desktop --no-verify -s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%"
+REM SET CYGWIN_GLOBAL_OPT=-g -A --quiet-mode --no-desktop --no-verify -l "%LOCALDIR%" -R "%ROOTDIR%"
+
 REM -- STARTING SCRIPT
 set DLOAD_SCRIPT=download.vbs
 REM -- pure batch downloader: https://semitwist.com/articles/article/view/downloading-files-from-plain-batch-with-zero-dependencies
@@ -113,26 +116,22 @@ EXIT /B 0
 
 :CASE_download
 	ECHO *** DOWNLOADING DEFAULT PACKAGES
-	%SETUP_LAUNCHER% --quiet-mode --no-desktop --download --no-verify ^
-	-s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%" ^
+	%SETUP_LAUNCHER% %CYGWIN_GLOBAL_OPT% --download ^
 	--remove-packages %UNWANT_PACKAGES%
 	ECHO.
 	ECHO.
 	ECHO *** DOWNLOADING CUSTOM PACKAGES
-	%SETUP_LAUNCHER% --quiet-mode --no-desktop --download --no-verify ^
-	-s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%" ^
+	%SETUP_LAUNCHER% %CYGWIN_GLOBAL_OPT% --download ^
 	--remove-packages %UNWANT_PACKAGES% -P %PACKAGES%
 	GOTO END_CASE
 :CASE_install
 	ECHO *** INSTALLING DEFAULT PACKAGES
-	%SETUP_LAUNCHER% --quiet-mode --no-desktop --local-install --no-verify ^
-	-s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%" ^
+	%SETUP_LAUNCHER% %CYGWIN_GLOBAL_OPT% --local-install ^
 	--remove-packages %UNWANT_PACKAGES%
 	ECHO.
 	ECHO.
 	ECHO *** INSTALLING CUSTOM PACKAGES
-	%SETUP_LAUNCHER% --quiet-mode --no-desktop --local-install --no-verify ^
-	-s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%" ^
+	%SETUP_LAUNCHER% %CYGWIN_GLOBAL_OPT% --local-install ^
 	--remove-packages %UNWANT_PACKAGES% -P %PACKAGES%
 	
 	ECHO apt-cyg installing.
