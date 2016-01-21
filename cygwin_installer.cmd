@@ -92,7 +92,7 @@ del "%DLOAD_SCRIPT%"
 REM -- These are the packages we will install (in addition to the default packages)
 SET PACKAGES=mc,cygrunsrv,openssh,autossh,mintty,wget,ctags,diffutils,git,git-completion,git-svn,stgit,mercurial
 SET PACKAGES=%PACKAGES%,curl,mysql,nc,unzip,zip,w3m,vim,vim-common,tmux,php,ImageMagick,procps,cron,bc,mutt
-SET PACKAGES=%PACKAGES%,bash-completion,ca-certificates,cygutils-extra,gnupg,inetutils,nc,nc6,ncurses
+SET PACKAGES=%PACKAGES%,bash-completion,ca-certificates,cygutils-extra,gnupg,inetutils,nc,nc6,ncurses,net-snmp-utils
 SET PACKAGES=%PACKAGES%,dialog,findutils,util-linux,ping,psmisc
 SET PACKAGES=%PACKAGES%,make,pcre,libpcre-devel,zlib-devel,gnutls-devel,gcc-core
 SET PACKAGES=%PACKAGES%,postgresql-client,mysql
