@@ -96,7 +96,7 @@ SET PACKAGES=%PACKAGES%,bash-completion,ca-certificates,cygutils-extra,gnupg,ine
 SET PACKAGES=%PACKAGES%,dialog,findutils,util-linux,ping,psmisc
 SET PACKAGES=%PACKAGES%,make,pcre,libpcre-devel,zlib-devel,gnutls-devel,gcc-core
 SET PACKAGES=%PACKAGES%,postgresql-client,mysql
-SET PACKAGES=%PACKAGES%,perl-Win32,php-curl,php-PEAR,php-XML
+SET PACKAGES=%PACKAGES%,perl-Win32,php-curl,php-PEAR,php-XML,socat
 
 REM -- These are necessary for apt-cyg install, do not change. Any duplicates will be ignored.
 SET PACKAGES=%PACKAGES%,wget,tar,gawk,bzip2,subversion
