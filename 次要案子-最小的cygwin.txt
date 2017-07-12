@@ -13,3 +13,5 @@
 後續：
 還要補上兩隻監控，放在/bin內省事
 然後生一組金鑰
+因為下載這包的執行者不一定是誰，所以只能請他親自執行了
+ssh-keygen -f $HOME/.ssh/id_rsa -t rsa -b 2048 -C 'report' -N ''
