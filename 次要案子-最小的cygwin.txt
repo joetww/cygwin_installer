@@ -1,6 +1,6 @@
 1.首先先是 安裝部份的參數：
-  .\setup-x86.exe -B -Y -d -n -N -P ping,wget,lynx,GeoIP,openssh
-  之後修改安裝包 參數改成 -B -Y -d -n -N -P ping,wget,lynx,GeoIP,openssh -M 
+  .\setup-x86.exe -B -Y -d -n -N -P ping,wget,lynx,GeoIP,openssh,vim,vim-common -x vim-minimal
+  之後修改安裝包 參數改成 -B -Y -d -n -N -P ping,wget,lynx,GeoIP,openssh,vim,vim-common -x vim-minimal -M 
 2.安裝package部份除了Base以外，追加ping & wget & lynx & GeoIP &openssh
 3.按照指示將cygwin安裝完畢以後，進入cygwin-termainal
   a. /usr/bin/lynx -source https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg > apt-cyg
