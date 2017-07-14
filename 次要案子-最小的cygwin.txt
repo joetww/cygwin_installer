@@ -1,10 +1,10 @@
 1.首先先是 安裝部份的參數：
-  .\setup-x86.exe -B -Y -d -n -N -P ping,wget,lynx,GeoIP,geoipupdate,openssh,vim,vim-common,ssmtp -x vim-minimal
-  之後修改安裝包 參數改成 -B -Y -d -n -N -P ping,wget,lynx,GeoIP,geoipupdate,openssh,vim,vim-common,ssmtp -x vim-minimal -M 
+  .\setup-x86.exe -B -Y -d -n -N -P ping,wget,lynx,GeoIP,geoipupdate,openssh,vim,vim-common,ssmtp,email -x vim-minimal
+  之後修改安裝包 參數改成 -B -Y -d -n -N -P ping,wget,lynx,GeoIP,geoipupdate,openssh,vim,vim-common,ssmtp,email -x vim-minimal -M 
 2.安裝package部份除了Base以外，追加ping & wget & lynx & GeoIP &openssh
 3.按照指示將cygwin安裝完畢以後，進入cygwin-termainal
   a. /usr/bin/lynx -source https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg > apt-cyg
-  b. /usr/bin/install apt-cyg /bin
+  b. /usr/bin/lynx -source https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg > apt-cyg
   (其實只是私心愛用這個而已，沒想用大可不理會)
 
 不過整體來說整包還是很大...嗚嗚，有解嗎？
@@ -16,3 +16,4 @@
 然後生一組金鑰
 因為下載這包的執行者不一定是誰，所以只能請他親自執行了
 ssh-keygen -f $HOME/.ssh/id_rsa -t rsa -b 2048 -C 'report' -N ''
+
